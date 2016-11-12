@@ -1,2 +1,2 @@
-# samplegame
-Sample Game project for the C++ SFML group for Fall 2015
+# Connect Four
+[Fall 2016] One of the several projects in sfml c++ simple game group.
