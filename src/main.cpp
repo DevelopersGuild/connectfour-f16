@@ -1,11 +1,17 @@
-﻿#include <SFML/Graphics.hpp>
+﻿//sfml template for c++ simple game group
+#include <SFML/Graphics.hpp>
 #include "ResourcePath.h"
+#include "Overlap.h"
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML Works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
+	sf::RenderWindow window(sf::VideoMode(800, 600), "SFML Works!");
+
+	sf::Texture pikaT;
+	pikaT.loadFromFile(resourcePath() + "assets\\pikachu.png");
+	sf::Sprite pikaS(pikaT);
+	pikaS.setOrigin(pikaS.getGlobalBounds().width / 2, pikaS.getGlobalBounds().height / 2);
+	pikaS.setPosition(400, 300);
 
 	while (window.isOpen())
 	{
@@ -17,7 +23,7 @@ int main()
 		}
 
 		window.clear();
-		window.draw(shape);
+		window.draw(pikaS);
 		window.display();
 	}
 
